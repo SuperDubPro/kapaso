@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   ChakraProvider,
   Box,
@@ -8,9 +8,9 @@ import {
   Code,
   Grid,
   theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+} from '@chakra-ui/react'
+import { ColorModeSwitcher } from './ColorModeSwitcher'
+import { Logo } from './Logo'
 
 function App() {
   return (
@@ -21,7 +21,11 @@ function App() {
           <VStack spacing={8}>
             <Logo h="40vmin" pointerEvents="none" />
             <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
+              Edit
+              {' '}
+              <Code fontSize="xl">src/App.js</Code>
+              {' '}
+              and save to reload.
             </Text>
             <Link
               color="teal.500"
@@ -36,7 +40,7 @@ function App() {
         </Grid>
       </Box>
     </ChakraProvider>
-  );
+  )
 }
 
-export default App;
+export default App
