@@ -2,14 +2,22 @@ import React, { StrictMode } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { ColorModeScript } from '@chakra-ui/react'
 import * as ReactDOM from 'react-dom/client'
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import { i18nConfig } from './locales'
 import * as serviceWorker from './serviceWorker'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+
+i18n
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init(i18nConfig)
 
 const container = document.getElementById('root')
 const root = ReactDOM.createRoot(container)
 
 root.render(
+  // eslint-disable-next-line react/jsx-filename-extension
   <StrictMode>
     <ColorModeScript />
     <BrowserRouter>

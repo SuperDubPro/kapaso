@@ -3,10 +3,12 @@ import { Link as RouterLink } from 'react-router-dom'
 import {
   IconButton, Link, Popover, PopoverContent, PopoverTrigger, Stack, useColorModeValue,
 } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
 import NAV_ITEMS from '../data'
 import DesktopSubNav from '../DesktopSubNav'
 
 export default function DesktopNav() {
+  const { t } = useTranslation()
   const linkColor = useColorModeValue('gray.100', 'gray.200')
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
   const linkHoverBg = useColorModeValue('whiteAlpha.400', 'whiteAlpha.200')
@@ -15,7 +17,7 @@ export default function DesktopNav() {
     <Stack direction="row" spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <IconButton
-          key={navItem.label}
+          key={`navbar-item-${navItem.label}`}
           _hover={{
             backgroundColor: linkHoverBg,
           }}
@@ -27,7 +29,7 @@ export default function DesktopNav() {
               <Link
                 as={RouterLink}
                 p={2}
-                to={navItem.href ?? '#'}
+                to={navItem.href ?? '/'}
                 fontSize="sm"
                 fontWeight={500}
                 color={linkColor}
@@ -35,7 +37,7 @@ export default function DesktopNav() {
                   textDecoration: 'none',
                 }}
               >
-                {navItem.label}
+                {t(navItem.label)}
               </Link>
             </PopoverTrigger>
 
@@ -50,7 +52,7 @@ export default function DesktopNav() {
               >
                 <Stack>
                   {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                    <DesktopSubNav key={`DesktopSubNav-${child.label}`} {...child} />
                   ))}
                 </Stack>
               </PopoverContent>

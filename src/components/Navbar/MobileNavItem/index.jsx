@@ -4,29 +4,39 @@ import {
   Collapse, Flex, Icon, Link, Stack, Text, useColorModeValue, useDisclosure,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import { useTranslation } from 'react-i18next'
 
-export default function MobileNavItem({ label, children, href }) {
-  const { isOpen, onToggle } = useDisclosure()
+export default function MobileNavItem({
+  label, children, href, onBurgerClose,
+}) {
+  const { isOpen } = useDisclosure()
+  const { t } = useTranslation()
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? '#'}
-        justify="space-between"
-        align="center"
+    <Stack spacing={4} onClick={onBurgerClose}>
+      <Link
+        as={RouterLink}
+        to={href ?? '#'}
         _hover={{
           textDecoration: 'none',
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}
+        <Flex
+          py={2}
+          href={href ?? '#'}
+          justify="space-between"
+          align="center"
+          _hover={{
+            textDecoration: 'none',
+          }}
         >
-          {label}
-        </Text>
-        {children && (
+          <Text
+            fontWeight={600}
+            color={useColorModeValue('gray.600', 'gray.200')}
+          >
+            {t(label)}
+          </Text>
+          {children && (
           <Icon
             as={ChevronDownIcon}
             transition="all .25s ease-in-out"
@@ -34,8 +44,9 @@ export default function MobileNavItem({ label, children, href }) {
             w={6}
             h={6}
           />
-        )}
-      </Flex>
+          )}
+        </Flex>
+      </Link>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
         <Stack
@@ -48,8 +59,8 @@ export default function MobileNavItem({ label, children, href }) {
         >
           {children
             && children.map((child) => (
-              <Link as={RouterLink} key={child.label} py={2} to={child.href}>
-                {child.label}
+              <Link as={RouterLink} key={`MobileNavItem-child-${child.label}`} py={2} to={child.href}>
+                {t(child.label)}
               </Link>
             ))}
         </Stack>

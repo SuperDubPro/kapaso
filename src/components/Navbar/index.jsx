@@ -15,11 +15,12 @@ import {
   CloseIcon,
 } from '@chakra-ui/icons'
 import ColorModeSwitcher from '../ColorModeSwitcher'
+import LanguageSwitcher from '../LanguageSwitcher'
 import MobileNav from './MobileNav'
 import DesktopNav from './DesktopNav'
 
 export default function Navbar() {
-  const { isOpen, onToggle } = useDisclosure()
+  const { isOpen, onToggle, onClose } = useDisclosure()
 
   return (
     <Box position="sticky" top="0" zIndex="sticky">
@@ -66,14 +67,15 @@ export default function Navbar() {
           flex={{ base: 1, md: 0 }}
           justify="flex-end"
           direction="row"
-          spacing={6}
+          spacing={1}
         >
-          <ColorModeSwitcher justifySelf="flex-end" />
+          <ColorModeSwitcher />
+          <LanguageSwitcher />
         </Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav onClose={onClose} />
       </Collapse>
     </Box>
   )

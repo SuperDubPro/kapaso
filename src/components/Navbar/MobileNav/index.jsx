@@ -3,7 +3,7 @@ import { Stack, useColorModeValue } from '@chakra-ui/react'
 import NAV_ITEMS from '../data'
 import MobileNavItem from '../MobileNavItem'
 
-export default function MobileNav() {
+export default function MobileNav({ onClose }) {
   return (
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
@@ -11,7 +11,11 @@ export default function MobileNav() {
       display={{ md: 'none' }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem
+          key={`MobileNavItem-${navItem.label}`}
+          onBurgerClose={onClose}
+          {...navItem}
+        />
       ))}
     </Stack>
   )

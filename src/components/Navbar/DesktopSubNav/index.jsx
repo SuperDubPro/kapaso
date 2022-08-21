@@ -3,8 +3,11 @@ import {
   Box, Flex, Icon, Link, Stack, Text, useColorModeValue,
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 export default function DesktopSubNav({ label, href, subLabel }) {
+  const { t } = useTranslation()
+
   return (
     <Link
       href={href}
@@ -21,9 +24,9 @@ export default function DesktopSubNav({ label, href, subLabel }) {
             _groupHover={{ color: 'pink.400' }}
             fontWeight={500}
           >
-            {label}
+            {t(label)}
           </Text>
-          <Text fontSize="sm">{subLabel}</Text>
+          <Text fontSize="sm">{t(subLabel)}</Text>
         </Box>
         <Flex
           transition="all .3s ease"
