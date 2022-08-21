@@ -6,6 +6,7 @@ export default function ColorModeSwitcher(props) {
   const { toggleColorMode } = useColorMode()
   const text = useColorModeValue('light', 'dark')
   const SwitchIcon = useColorModeValue(FaSun, FaMoon)
+  const hoverBgColor = useColorModeValue('whiteAlpha.400', 'whiteAlpha.200')
 
   return (
     <IconButton
@@ -18,6 +19,9 @@ export default function ColorModeSwitcher(props) {
       onClick={toggleColorMode}
       icon={<SwitchIcon />}
       {...props}
+      _hover={{
+        backgroundColor: hoverBgColor,
+      }}
     />
   )
 }
