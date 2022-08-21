@@ -1,3 +1,7 @@
+import { PAGES_DATA } from '../../../pages'
+
+const { PATHS, PAGES_NAMES } = PAGES_DATA
+
 const NAV_ITEMS = [
   {
     label: 'Inspiration',
@@ -5,12 +9,12 @@ const NAV_ITEMS = [
       {
         label: 'Explore Design Work',
         subLabel: 'Trending Design to inspire you',
-        href: '#',
+        href: PATHS[PAGES_NAMES.home],
       },
       {
         label: 'New & Noteworthy',
         subLabel: 'Up-and-coming Designers',
-        href: '#',
+        href: PATHS[PAGES_NAMES.home],
       },
     ],
   },
@@ -20,22 +24,26 @@ const NAV_ITEMS = [
       {
         label: 'Job Board',
         subLabel: 'Find your dream design job',
-        href: '#',
+        href: PATHS[PAGES_NAMES.home],
       },
       {
         label: 'Freelance Projects',
         subLabel: 'An exclusive list for contract work',
-        href: '#',
+        href: PATHS[PAGES_NAMES.home],
       },
     ],
   },
   {
     label: 'Learn Design',
-    href: '#',
+    href: PATHS[PAGES_NAMES.home],
   },
   {
     label: 'Hire Designers',
-    href: '#',
+    href: PATHS[PAGES_NAMES.home],
+  },
+  {
+    label: 'About',
+    href: PATHS[PAGES_NAMES.about],
   },
 ]
 

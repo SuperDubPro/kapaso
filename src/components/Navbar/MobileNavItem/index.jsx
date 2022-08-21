@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import {
   Collapse, Flex, Icon, Link, Stack, Text, useColorModeValue, useDisclosure,
 } from '@chakra-ui/react'
@@ -47,7 +48,7 @@ export default function MobileNavItem({ label, children, href }) {
         >
           {children
             && children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link as={RouterLink} key={child.label} py={2} to={child.href}>
                 {child.label}
               </Link>
             ))}

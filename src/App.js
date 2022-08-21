@@ -1,16 +1,15 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
   Grid,
   theme,
 } from '@chakra-ui/react'
-import { Logo } from './Logo'
 import { Navbar } from './components'
+import { Home, About, PAGES_DATA } from './pages'
+
+const { PATHS, PAGES_NAMES } = PAGES_DATA
 
 function App() {
   return (
@@ -18,25 +17,10 @@ function App() {
       <Box textAlign="center" fontSize="xl">
         <Navbar />
         <Grid minH="100vh" p={3}>
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit
-              {' '}
-              <Code fontSize="xl">src/App.js</Code>
-              {' '}
-              and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
+          <Routes>
+            <Route path={PATHS[PAGES_NAMES.home]} element={<Home />} />
+            <Route path={PATHS[PAGES_NAMES.about]} element={<About />} />
+          </Routes>
         </Grid>
       </Box>
     </ChakraProvider>

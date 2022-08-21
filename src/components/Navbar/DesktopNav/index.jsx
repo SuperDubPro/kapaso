@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import {
   IconButton, Link, Popover, PopoverContent, PopoverTrigger, Stack, useColorModeValue,
 } from '@chakra-ui/react'
@@ -24,8 +25,9 @@ export default function DesktopNav() {
           <Popover trigger="hover" placement="bottom-start">
             <PopoverTrigger>
               <Link
+                as={RouterLink}
                 p={2}
-                href={navItem.href ?? '#'}
+                to={navItem.href ?? '#'}
                 fontSize="sm"
                 fontWeight={500}
                 color={linkColor}
