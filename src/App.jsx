@@ -16,7 +16,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
         <Navbar />
-        <Grid minH="100vh" p={3}>
+        <Grid minH="100vh">
           <Routes>
             <Route path={PATHS[PAGES_NAMES.home]} element={<Home />} />
             <Route path={PATHS[PAGES_NAMES.about]} element={<About />} />
