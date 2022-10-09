@@ -8,7 +8,7 @@ import { Carousel } from '../../components'
 export default function Home() {
   return (
     <>
-      <Box maxW="98vw" pb={4}>
+      <Box maxW="full" pb={4}>
         <Carousel />
       </Box>
       <VStack spacing={8}>

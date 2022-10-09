@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import {
   ChakraProvider,
   Box,
-  Grid,
+  SimpleGrid,
   theme,
 } from '@chakra-ui/react'
 import { Navbar } from './components'
@@ -16,12 +16,12 @@ function App() {
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
         <Navbar />
-        <Grid minH="100vh">
+        <SimpleGrid columns={1} width="full">
           <Routes>
             <Route path={PATHS[PAGES_NAMES.home]} element={<Home />} />
             <Route path={PATHS[PAGES_NAMES.about]} element={<About />} />
           </Routes>
-        </Grid>
+        </SimpleGrid>
       </Box>
     </ChakraProvider>
   )
