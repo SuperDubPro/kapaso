@@ -13,6 +13,7 @@ const home = {
       text: 'And this',
     },
   },
+  partners: 'Our partners',
 }
 
 export default home

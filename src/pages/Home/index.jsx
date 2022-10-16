@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, SimpleGrid, useColorModeValue } from '@chakra-ui/react'
-// import { Logo } from './Logo'
 import { useTranslation } from 'react-i18next'
 import { BsFillStickyFill, BsFillBagFill, BsFillLayersFill } from 'react-icons/bs'
 import { Carousel, ProductCard } from '../../components'
+import Partners from './Partners'
 
 import HOME_DATA from './data'
 
@@ -33,6 +33,8 @@ export default function Home() {
           <ProductCard icon={ICONS[icon]} header={t(header)} text={t(text)} />
         ))}
       </SimpleGrid>
+
+      <Partners />
     </>
   )
 }

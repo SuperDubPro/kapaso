@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Box, Text, Heading, useColorModeValue,
+  Box, Circle, Text, Heading, useColorModeValue,
 } from '@chakra-ui/react'
 
 // const IMAGE = 'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'
@@ -12,18 +12,13 @@ export default function ProductCard({ icon, header, text }) {
       borderRadius={12}
       bgColor={useColorModeValue('white', 'gray.800')}
     >
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        borderRadius="50%"
-        width={12}
-        height={12}
+      <Circle
+        size={12}
         bgColor="teal.500"
         color="white"
       >
         {icon}
-      </Box>
+      </Circle>
       <Heading as="h2" fontSize="xl" mt="1em" mb="0.5em">{header}</Heading>
       <Text fontSize="lg" opacity={0.7}>{text}</Text>
     </Box>
