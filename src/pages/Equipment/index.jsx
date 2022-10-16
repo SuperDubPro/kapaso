@@ -3,11 +3,11 @@ import {
   Text, VStack,
 } from '@chakra-ui/react'
 
-export default function About() {
+export default function Equipment() {
   return (
     <VStack spacing={8}>
       <Text>
-        About page
+        Equipment page
       </Text>
     </VStack>
   )

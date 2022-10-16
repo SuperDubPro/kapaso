@@ -18,28 +18,33 @@ const NAV_ITEMS = [
   //     },
   //   ],
   // },
-  // {
-  //   label: 'Find Work',
-  //   children: [
-  //     {
-  //       label: 'Job Board',
-  //       subLabel: 'Find your dream design job',
-  //       href: PATHS[PAGES_NAMES.home],
-  //     },
-  //     {
-  //       label: 'Freelance Projects',
-  //       subLabel: 'An exclusive list for contract work',
-  //       href: PATHS[PAGES_NAMES.home],
-  //     },
-  //   ],
-  // },
   {
     label: 'navbar.home',
     href: PATHS[PAGES_NAMES.home],
   },
   {
+    label: 'navbar.package',
+    href: PATHS[PAGES_NAMES.package],
+  },
+  {
+    label: 'navbar.materials',
+    href: PATHS[PAGES_NAMES.materials],
+  },
+  {
+    label: 'navbar.labels',
+    href: PATHS[PAGES_NAMES.labels],
+  },
+  {
+    label: 'navbar.equipment',
+    href: PATHS[PAGES_NAMES.equipment],
+  },
+  {
     label: 'navbar.about',
     href: PATHS[PAGES_NAMES.about],
+  },
+  {
+    label: 'navbar.contacts',
+    href: PATHS[PAGES_NAMES.contacts],
   },
 ]
 
