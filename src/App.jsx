@@ -6,7 +6,7 @@ import {
   SimpleGrid,
   theme,
 } from '@chakra-ui/react'
-import { Navbar } from './components'
+import { Navbar, Footer } from './components'
 import { Home, About, PAGES_DATA } from './pages'
 
 const { PATHS, PAGES_NAMES } = PAGES_DATA
@@ -22,6 +22,7 @@ function App() {
             <Route path={PATHS[PAGES_NAMES.about]} element={<About />} />
           </Routes>
         </SimpleGrid>
+        <Footer />
       </Box>
     </ChakraProvider>
   )
