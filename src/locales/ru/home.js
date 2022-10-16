@@ -14,6 +14,7 @@ const home = {
     },
   },
   partners: 'Наши партнеры',
+  moreBtn: 'Подробнее',
 }
 
 export default home

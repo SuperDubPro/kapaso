@@ -14,6 +14,7 @@ const home = {
     },
   },
   partners: 'Our partners',
+  moreBtn: 'More',
 }
 
 export default home

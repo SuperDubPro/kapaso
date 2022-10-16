@@ -29,8 +29,16 @@ export default function Home() {
         px={[8, 12, 20]}
         bgColor={useColorModeValue('gray.50', 'gray.900')}
       >
-        {HOME_DATA.PRODUCT_CARDS.map(({ icon, header, text }) => (
-          <ProductCard icon={ICONS[icon]} header={t(header)} text={t(text)} />
+        {HOME_DATA.PRODUCT_CARDS.map(({
+          icon, header, text, to, btnText,
+        }) => (
+          <ProductCard
+            icon={ICONS[icon]}
+            header={t(header)}
+            text={t(text)}
+            to={to}
+            btnText={t(btnText)}
+          />
         ))}
       </SimpleGrid>
 
