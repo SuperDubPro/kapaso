@@ -16,13 +16,13 @@ export default function Footer() {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container
         as={Stack}
         margin={0}
         maxW="100%"
-        py={4}
+        pt={12}
+        pb={8}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}

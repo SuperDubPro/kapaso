@@ -25,14 +25,10 @@ export default function Navbar() {
   return (
     <Box position="sticky" top="0" zIndex="sticky">
       <Flex
-        bg={useColorModeValue('blue.300', 'blue.700')}
-        color={useColorModeValue('gray.100', 'white')}
+        bg={useColorModeValue('white', 'gray.800')}
         minH="60px"
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle="solid"
-        borderColor={useColorModeValue('blue.200', 'blue.900')}
         align="center"
       >
         <Flex
@@ -53,7 +49,6 @@ export default function Navbar() {
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily="heading"
-            color={useColorModeValue('gray.100', 'white')}
           >
             Logo
           </Text>

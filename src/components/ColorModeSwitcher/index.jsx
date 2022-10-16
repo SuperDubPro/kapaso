@@ -5,7 +5,7 @@ import { FaMoon, FaSun } from 'react-icons/fa'
 export default function ColorModeSwitcher(props) {
   const { toggleColorMode } = useColorMode()
   const text = useColorModeValue('light', 'dark')
-  const SwitchIcon = useColorModeValue(FaSun, FaMoon)
+  const SwitchIcon = useColorModeValue(FaMoon, FaSun)
   const hoverBgColor = useColorModeValue('whiteAlpha.400', 'whiteAlpha.200')
 
   return (

@@ -9,9 +9,8 @@ import DesktopSubNav from '../DesktopSubNav'
 
 export default function DesktopNav() {
   const { t } = useTranslation()
-  const linkColor = useColorModeValue('gray.100', 'gray.200')
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
-  const linkHoverBg = useColorModeValue('whiteAlpha.400', 'whiteAlpha.200')
+  const linkHoverBg = useColorModeValue('gray.50', 'whiteAlpha.200')
 
   return (
     <Stack direction="row" spacing={4}>
@@ -32,7 +31,7 @@ export default function DesktopNav() {
                 to={navItem.href ?? '/'}
                 fontSize="sm"
                 fontWeight={500}
-                color={linkColor}
+                // color={linkColor}
                 _hover={{
                   textDecoration: 'none',
                 }}
