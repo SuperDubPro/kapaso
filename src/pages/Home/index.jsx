@@ -15,11 +15,12 @@ const ICONS = {
 
 export default function Home() {
   const { t } = useTranslation()
+  const { PRODUCT_CARDS, CAROUSEL } = HOME_DATA
 
   return (
     <>
       <Box maxW="full">
-        <Carousel />
+        <Carousel data={CAROUSEL} />
       </Box>
 
       <SimpleGrid
@@ -29,10 +30,11 @@ export default function Home() {
         px={[8, 12, 20]}
         bgColor={useColorModeValue('gray.50', 'gray.900')}
       >
-        {HOME_DATA.PRODUCT_CARDS.map(({
-          icon, header, text, to, btnText,
+        {PRODUCT_CARDS.map(({
+          icon, header, text, to, btnText, id,
         }) => (
           <ProductCard
+            key={id}
             icon={ICONS[icon]}
             header={t(header)}
             text={t(text)}

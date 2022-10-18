@@ -2,23 +2,23 @@ import React from 'react'
 import {
   Box,
   IconButton,
-  useBreakpointValue,
   Stack,
   Heading,
   Text,
   Container,
+  useBreakpointValue,
+  useColorModeValue,
 } from '@chakra-ui/react'
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { nanoid } from 'nanoid'
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
-import { cards } from './data'
+import { useTranslation } from 'react-i18next'
 
 // Settings for the slider
-const settings = {
+const defaultSettings = {
   dots: true,
   arrows: false,
   fade: true,
@@ -30,10 +30,14 @@ const settings = {
   slidesToScroll: 1,
 }
 
-export default function CaptionCarousel() {
+export default function CaptionCarousel({ data, settings }) {
+  const { t } = useTranslation()
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = React.useState(null)
+  const blackout = useColorModeValue('255,255,255,0.2', '0,0,0,0.4')
+  const titleColor = useColorModeValue('black', 'white')
+  const textColor = useColorModeValue('black', 'gray.100')
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
@@ -78,17 +82,25 @@ export default function CaptionCarousel() {
         <BiRightArrowAlt size="40px" />
       </IconButton>
       {/* Slider */}
-      <Slider {...settings} ref={(s) => setSlider(s)}>
-        {cards.map((card) => (
+      <Slider {...defaultSettings} {...settings} ref={(s) => setSlider(s)}>
+        {data.map((card) => (
           <Box
-            key={nanoid()}
-            height="6xl"
+            key={card.id}
+            // height="6xl"
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}
           >
+            <Box
+              position="absolute"
+              left="0"
+              right="0"
+              top="0"
+              bottom="0"
+              background={`rgba(${blackout})`}
+            />
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
               <Stack
@@ -99,11 +111,11 @@ export default function CaptionCarousel() {
                 top="50%"
                 transform="translate(0, -50%)"
               >
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                  {card.title}
+                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color={titleColor}>
+                  {t(card.title)}
                 </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
-                  {card.text}
+                <Text fontSize={{ base: 'md', lg: 'lg' }} fontWeight="medium" color={textColor}>
+                  {t(card.text)}
                 </Text>
               </Stack>
             </Container>

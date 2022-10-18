@@ -1,4 +1,18 @@
 const home = {
+  carousel: {
+    first: {
+      title: 'Высококлассное оборудование',
+      text: 'Самое самое',
+    },
+    second: {
+      title: 'Инновации',
+      text: 'Бла бла бла.',
+    },
+    third: {
+      title: 'Нанотехнологии',
+      text: 'Бла бла бла.',
+    },
+  },
   productCards: {
     package: {
       header: 'Упаковка',
