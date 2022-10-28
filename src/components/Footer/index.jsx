@@ -5,10 +5,12 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  VStack,
 } from '@chakra-ui/react'
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import SocialButton from './SocialButton'
+import packageJson from '../../../package.json'
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -29,7 +31,10 @@ export default function Footer() {
         align={{ base: 'center', md: 'center' }}
         fontSize={{ base: 'md', lg: 'lg' }}
       >
-        <Text>{t('footer.copyright')}</Text>
+        <VStack align="start">
+          <Text>{t('footer.copyright')}</Text>
+          <Text opacity="0.1">{`v${packageJson.version}`}</Text>
+        </VStack>
         <Stack direction="row" spacing={6}>
           <SocialButton label="Twitter" href="#">
             <FaTwitter />
