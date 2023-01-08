@@ -1,7 +1,5 @@
 import { nanoid } from 'nanoid'
-import DSC_7152 from '../Home/assets/DSC_7152.jpg'
-import DSC_7169 from '../Home/assets/DSC_7169.jpg'
-import DSC_7171 from '../Home/assets/DSC_7171.jpg'
+import noImage from '../../assets/noImage.png'
 
 const TEXTS = {
   title: 'labels.title',
@@ -33,15 +31,15 @@ const DESCRIPTION = [
 const CAROUSEL = [
   {
     id: nanoid(),
-    image: DSC_7152,
+    image: noImage,
   },
   {
     id: nanoid(),
-    image: DSC_7169,
+    image: noImage,
   },
   {
     id: nanoid(),
-    image: DSC_7171,
+    image: noImage,
   },
 ]
 

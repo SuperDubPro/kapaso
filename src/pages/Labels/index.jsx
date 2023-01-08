@@ -22,44 +22,40 @@ export default function Labels() {
   const cardColor = useColorModeValue('gray.50', 'gray.900')
 
   return (
-    <VStack spacing={8}>
-      <SimpleGrid
-        columns={[1, 1, 2, 2]}
-      >
-        <VStack px={8} py={8}>
-          <Heading pb={8}>
-            {t(TEXTS.title)}
-          </Heading>
+    <Box display="flex" flexDir={['column', 'column', 'row']}>
+      <VStack px={8} py={8}>
+        <Heading pb={8}>
+          {t(TEXTS.title)}
+        </Heading>
 
-          <SimpleGrid columns={[1, 2, 2, 2]} spacing={8}>
-            {DESCRIPTION.map(({ id, iconName, text }) => (
-              <Card
-                key={id}
-                bgColor={cardColor}
-              >
-                <VStack>
-                  <Circle
-                    size={8}
-                    bgColor="teal.500"
-                    color="white"
-                  >
-                    {ICONS[iconName]}
-                  </Circle>
-                  <Text textAlign="center">
-                    {t(text)}
-                  </Text>
-                </VStack>
-              </Card>
-            ))}
-          </SimpleGrid>
-        </VStack>
+        <SimpleGrid columns={[1, 2]} spacing={8} minW="45vw">
+          {DESCRIPTION.map(({ id, iconName, text }) => (
+            <Card
+              key={id}
+              bgColor={cardColor}
+            >
+              <VStack>
+                <Circle
+                  size={8}
+                  bgColor="teal.500"
+                  color="white"
+                >
+                  {ICONS[iconName]}
+                </Circle>
+                <Text textAlign="center">
+                  {t(text)}
+                </Text>
+              </VStack>
+            </Card>
+          ))}
+        </SimpleGrid>
+      </VStack>
 
-        <Box overflow="hidden" borderRadius="12px">
-          <Carousel
-            data={CAROUSEL}
-          />
-        </Box>
-      </SimpleGrid>
-    </VStack>
+      <Box overflow="hidden" borderRadius="12px" height="fit-content">
+        <Carousel
+          data={CAROUSEL}
+        />
+      </Box>
+    </Box>
   )
 }
