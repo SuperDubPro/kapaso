@@ -1,20 +1,18 @@
 import React from 'react'
 import {
-  Box, Circle, Text, Heading, useColorModeValue, Button, VStack,
+  Circle, Text, Heading, Button, VStack,
 } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
+import { Card } from '../../../components'
 
 export default function ProductCard({
   icon, header, text, to, btnText,
 }) {
   return (
-    <Box
+    <Card
       display="flex"
       flexDir="column"
       justifyContent="space-between"
-      p={10}
-      borderRadius={12}
-      bgColor={useColorModeValue('white', 'gray.800')}
     >
       <VStack>
         <Circle
@@ -30,6 +28,6 @@ export default function ProductCard({
       </VStack>
 
       {to && <Button as={RouterLink} variant="outline" mt="1em" to={to}>{btnText}</Button>}
-    </Box>
+    </Card>
   )
 }

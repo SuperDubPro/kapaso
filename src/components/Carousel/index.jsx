@@ -30,12 +30,13 @@ const defaultSettings = {
   slidesToScroll: 1,
 }
 
-export default function CaptionCarousel({ data, settings }) {
+export default function CaptionCarousel({ data, settings = {} }) {
   const { t } = useTranslation()
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = React.useState(null)
-  const blackout = useColorModeValue('255,255,255,0.2', '0,0,0,0.4')
+  const { isContrastWrapper } = settings
+  const contrastWrapper = useColorModeValue('255,255,255,0.2', '0,0,0,0.4')
   const titleColor = useColorModeValue('black', 'white')
   const textColor = useColorModeValue('black', 'gray.100')
 
@@ -86,7 +87,6 @@ export default function CaptionCarousel({ data, settings }) {
         {data.map((card) => (
           <Box
             key={card.id}
-            // height="6xl"
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
@@ -99,7 +99,7 @@ export default function CaptionCarousel({ data, settings }) {
               right="0"
               top="0"
               bottom="0"
-              background={`rgba(${blackout})`}
+              background={isContrastWrapper && `rgba(${contrastWrapper})`}
             />
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">

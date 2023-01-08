@@ -18,6 +18,7 @@ export default function Footer() {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
+      position="relative"
     >
       <Container
         as={Stack}
@@ -33,7 +34,6 @@ export default function Footer() {
       >
         <VStack align="start">
           <Text>{t('footer.copyright')}</Text>
-          <Text opacity="0.1">{`v${packageJson.version}`}</Text>
         </VStack>
         <Stack direction="row" spacing={6}>
           <SocialButton label="Twitter" href="#">
@@ -47,6 +47,10 @@ export default function Footer() {
           </SocialButton>
         </Stack>
       </Container>
+
+      <Box position="absolute" bottom="0" left="16px">
+        <Text opacity="0.1">{`v${packageJson.version}`}</Text>
+      </Box>
     </Box>
   )
 }

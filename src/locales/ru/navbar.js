@@ -3,7 +3,7 @@ const navbar = {
   about: 'О нас',
   package: 'Упаковка',
   materials: 'Материалы',
-  labels: 'Этикетка',
+  labels: 'Этикетки',
   equipment: 'Наше оборудование',
   contacts: 'Контакты',
 }

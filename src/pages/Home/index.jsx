@@ -2,7 +2,8 @@ import React from 'react'
 import { Box, SimpleGrid, useColorModeValue } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import { BsFillStickyFill, BsFillBagFill, BsFillLayersFill } from 'react-icons/bs'
-import { Carousel, ProductCard } from '../../components'
+import { Carousel } from '../../components'
+import ProductCard from './ProductCard'
 import Partners from './Partners'
 
 import HOME_DATA from './data'
@@ -20,7 +21,12 @@ export default function Home() {
   return (
     <>
       <Box maxW="full">
-        <Carousel data={CAROUSEL} />
+        <Carousel
+          data={CAROUSEL}
+          settings={{
+            isContrastWrapper: true,
+          }}
+        />
       </Box>
 
       <SimpleGrid
