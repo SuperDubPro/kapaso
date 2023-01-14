@@ -19,6 +19,7 @@ export default function Footer() {
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
       position="relative"
+      width="100%"
     >
       <Container
         as={Stack}

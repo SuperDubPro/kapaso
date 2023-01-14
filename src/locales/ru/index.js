@@ -1,8 +1,9 @@
 import navbar from './navbar'
 import footer from './footer'
-import home from './home'
-import labels from './labels'
-import materials from './materials'
+import home from './pages/home'
+import labels from './pages/labels'
+import materials from './pages/materials'
+import packageLocale from './pages/package'
 
 const ruTranslations = {
   navbar,
@@ -10,6 +11,7 @@ const ruTranslations = {
   home,
   labels,
   materials,
+  packageLocale,
 }
 
 export default ruTranslations

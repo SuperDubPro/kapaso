@@ -16,9 +16,9 @@ const { PATHS, PAGES_NAMES } = PAGES_DATA
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box minH="80vh">
+      <Box minH="80vh" position="relative" pb={0}>
         <Navbar />
-        <SimpleGrid columns={1} width="full" minH="80vh">
+        <SimpleGrid columns={1} width="100%" minH="80vh" overflowX="hidden">
           <Routes>
             <Route path={PATHS[PAGES_NAMES.home]} element={<Home />} />
             <Route path={PATHS[PAGES_NAMES.about]} element={<About />} />

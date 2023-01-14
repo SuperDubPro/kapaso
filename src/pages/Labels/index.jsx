@@ -22,7 +22,7 @@ export default function Labels() {
   const cardColor = useColorModeValue('gray.50', 'gray.900')
 
   return (
-    <Box display="flex" flexDir={['column', 'column', 'row']}>
+    <Box display="flex" flexDir={['column', 'column', 'row']} pb={8}>
       <VStack px={8} py={8}>
         <Heading pb={8}>
           {t(TEXTS.title)}
