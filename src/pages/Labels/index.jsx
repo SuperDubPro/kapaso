@@ -5,7 +5,7 @@ import {
 import { useTranslation } from 'react-i18next'
 import { TbResize, TbTemperature } from 'react-icons/tb'
 import { IoSunny, IoSnow } from 'react-icons/io5'
-import { Card, Carousel } from '../../components'
+import { Card, Carousel, PageBlock } from '../../components'
 import LABELS_DATA from './data'
 
 const { CAROUSEL, DESCRIPTION, TEXTS } = LABELS_DATA
@@ -22,13 +22,13 @@ export default function Labels() {
   const cardColor = useColorModeValue('gray.50', 'gray.900')
 
   return (
-    <Box display="flex" flexDir={['column', 'column', 'row']} pb={8}>
-      <VStack px={8} py={8}>
+    <PageBlock display="flex" flexDir={['column', 'column', 'row']} pb={8}>
+      <VStack px={8} py={8} minWidth="50%">
         <Heading pb={8}>
           {t(TEXTS.title)}
         </Heading>
 
-        <SimpleGrid columns={[1, 2]} spacing={8} minW="45vw">
+        <SimpleGrid columns={[1, 2]} spacing={8}>
           {DESCRIPTION.map(({ id, iconName, text }) => (
             <Card
               key={id}
@@ -51,11 +51,11 @@ export default function Labels() {
         </SimpleGrid>
       </VStack>
 
-      <Box overflow="hidden" borderRadius="12px" height="fit-content">
+      <Box overflow="hidden" borderRadius="12px" height="fit-content" minWidth="50%">
         <Carousel
           data={CAROUSEL}
         />
       </Box>
-    </Box>
+    </PageBlock>
   )
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Circle,
-  Container,
   Heading,
   VStack,
   Wrap,
@@ -16,45 +15,43 @@ export default function Partners() {
   const bgColor = useColorModeValue('gray.200', 'white')
 
   return (
-    <Container py={16}>
-      <VStack>
-        <Heading pb={6}>{t('home.partners')}</Heading>
-        <Wrap justify="center">
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-          <WrapItem>
-            <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
-          </WrapItem>
-        </Wrap>
-      </VStack>
-    </Container>
+    <VStack>
+      <Heading pb={6}>{t('home.partners')}</Heading>
+      <Wrap justify="center">
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+        <WrapItem>
+          <Circle size={20} bgColor={bgColor} color="gray.800"><SiSamsung size="60" /></Circle>
+        </WrapItem>
+      </Wrap>
+    </VStack>
   )
 }

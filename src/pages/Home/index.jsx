@@ -1,8 +1,8 @@
 import React from 'react'
-import { Box, SimpleGrid, useColorModeValue } from '@chakra-ui/react'
+import { Box, SimpleGrid, Container } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import { BsFillStickyFill, BsFillBagFill, BsFillLayersFill } from 'react-icons/bs'
-import { Carousel } from '../../components'
+import { Carousel, PageBlock } from '../../components'
 import ProductCard from './ProductCard'
 import Partners from './Partners'
 
@@ -29,28 +29,33 @@ export default function Home() {
         />
       </Box>
 
-      <SimpleGrid
-        columns={[1, 1, 2, 3]}
-        spacing={10}
-        py={40}
-        px={[8, 12, 20]}
-        bgColor={useColorModeValue('gray.50', 'gray.900')}
-      >
-        {PRODUCT_CARDS.map(({
-          icon, header, text, to, btnText, id,
-        }) => (
-          <ProductCard
-            key={id}
-            icon={ICONS[icon]}
-            header={t(header)}
-            text={t(text)}
-            to={to}
-            btnText={t(btnText)}
-          />
-        ))}
-      </SimpleGrid>
+      <PageBlock isDark>
+        <SimpleGrid
+          columns={[1, 1, 2, 3]}
+          spacing={10}
+          py={40}
+          px={[8, 12, 20]}
+        >
+          {PRODUCT_CARDS.map(({
+            icon, header, text, to, btnText, id,
+          }) => (
+            <ProductCard
+              key={id}
+              icon={ICONS[icon]}
+              header={t(header)}
+              text={t(text)}
+              to={to}
+              btnText={t(btnText)}
+            />
+          ))}
+        </SimpleGrid>
+      </PageBlock>
 
-      <Partners />
+      <PageBlock>
+        <Container py={16}>
+          <Partners />
+        </Container>
+      </PageBlock>
     </>
   )
 }
