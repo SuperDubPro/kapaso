@@ -5,12 +5,12 @@ import {
   Grid,
   GridItem,
   VStack,
-  theme,
 } from '@chakra-ui/react'
 import { Navbar, Footer } from './components'
 import {
   Home, About, PAGES_DATA, Package, Materials, Equipment, Contacts, Labels,
 } from './pages'
+import theme from './theme'
 
 const { PATHS, PAGES_NAMES } = PAGES_DATA
 

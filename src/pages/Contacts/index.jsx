@@ -12,7 +12,7 @@ export default function Contacts() {
       <Text>
         Contacts page
       </Text>
-      <PageBlock height="350px">
+      <PageBlock height="40vh">
         <YaMap target={TARGET_COORDS} mapCenter={MAP_CENTER_COORDS} />
       </PageBlock>
     </>

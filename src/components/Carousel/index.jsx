@@ -35,7 +35,7 @@ export default function CaptionCarousel({ data, settings = {} }) {
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = React.useState(null)
-  const { isContrastWrapper } = settings
+  const { isContrastWrapper, height = '600px' } = settings
   const contrastWrapper = useColorModeValue('255,255,255,0.2', '0,0,0,0.4')
   const titleColor = useColorModeValue('black', 'white')
   const textColor = useColorModeValue('black', 'gray.100')
@@ -51,7 +51,7 @@ export default function CaptionCarousel({ data, settings = {} }) {
   return (
     <Box
       position="relative"
-      height="600px"
+      height={height}
       width="full"
       overflow="hidden"
       textAlign="center"
