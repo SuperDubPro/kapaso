@@ -2,11 +2,9 @@ import React from 'react'
 import {
   Box,
   Flex,
-  Text,
   IconButton,
   Collapse,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Stack,
 } from '@chakra-ui/react'
@@ -18,6 +16,7 @@ import ColorModeSwitcher from '../ColorModeSwitcher'
 import LanguageSwitcher from '../LanguageSwitcher'
 import MobileNav from './MobileNav'
 import DesktopNav from './DesktopNav'
+import { KapasoLogo } from '../../customIcons'
 
 export default function Navbar() {
   const { isOpen, onToggle, onClose } = useDisclosure()
@@ -28,7 +27,7 @@ export default function Navbar() {
         bg={useColorModeValue('white', 'gray.800')}
         minH="60px"
         py={{ base: 2 }}
-        px={{ base: 4 }}
+        px={{ base: 8 }}
         align="center"
       >
         <Flex
@@ -45,15 +44,9 @@ export default function Navbar() {
             aria-label="Toggle Navigation"
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily="heading"
-          >
-            Logo
-          </Text>
-
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} alignItems="center">
+          <KapasoLogo size="xl" />
+          <Flex display={{ base: 'none', md: 'flex' }} ml={8}>
             <DesktopNav />
           </Flex>
         </Flex>
