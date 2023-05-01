@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 import { Navbar, Footer } from './components'
 import {
-  Home, About, PAGES_DATA, Package, Materials, Equipment, Contacts, Labels,
+  Home, About, PAGES_DATA, Packets, Materials, Equipment, Contacts, Labels, Printing,
 } from './pages'
 import theme from './theme'
 
@@ -33,9 +33,10 @@ function App() {
             <Routes>
               <Route path={PATHS[PAGES_NAMES.home]} element={<Home />} />
               <Route path={PATHS[PAGES_NAMES.about]} element={<About />} />
-              <Route path={PATHS[PAGES_NAMES.package]} element={<Package />} />
+              <Route path={PATHS[PAGES_NAMES.packets]} element={<Packets />} />
               <Route path={PATHS[PAGES_NAMES.materials]} element={<Materials />} />
               <Route path={PATHS[PAGES_NAMES.labels]} element={<Labels />} />
+              <Route path={PATHS[PAGES_NAMES.printing]} element={<Printing />} />
               <Route path={PATHS[PAGES_NAMES.equipment]} element={<Equipment />} />
               <Route path={PATHS[PAGES_NAMES.contacts]} element={<Contacts />} />
             </Routes>

@@ -8,6 +8,7 @@ import {
   useDisclosure,
   Stack,
 } from '@chakra-ui/react'
+import { Link as RouterLink } from 'react-router-dom'
 import {
   HamburgerIcon,
   CloseIcon,
@@ -17,6 +18,9 @@ import LanguageSwitcher from '../LanguageSwitcher'
 import MobileNav from './MobileNav'
 import DesktopNav from './DesktopNav'
 import { KapasoLogo } from '../../customIcons'
+import { PAGES_DATA } from '../../pages'
+
+const { PATHS, PAGES_NAMES } = PAGES_DATA
 
 export default function Navbar() {
   const { isOpen, onToggle, onClose } = useDisclosure()
@@ -30,6 +34,7 @@ export default function Navbar() {
         px={{ base: 8 }}
         align="center"
       >
+        {/** mobile hamburger toggle */}
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -44,8 +49,11 @@ export default function Navbar() {
             aria-label="Toggle Navigation"
           />
         </Flex>
+
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} alignItems="center">
-          <KapasoLogo size="xl" />
+          <RouterLink to={PATHS[PAGES_NAMES.home]}>
+            <KapasoLogo size="xl" />
+          </RouterLink>
           <Flex display={{ base: 'none', md: 'flex' }} ml={8}>
             <DesktopNav />
           </Flex>

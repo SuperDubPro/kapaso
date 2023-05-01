@@ -8,43 +8,25 @@ const TEXTS = {
 const DESCRIPTION = [
   {
     id: nanoid(),
-    text: 'labels.description.size',
-    iconName: 'TbResize',
-  },
-  {
-    id: nanoid(),
-    text: 'labels.description.sun',
-    iconName: 'IoSunny',
-  },
-  {
-    id: nanoid(),
-    text: 'labels.description.frost',
-    iconName: 'IoSnow',
-  },
-  {
-    id: nanoid(),
-    text: 'labels.description.dry',
-    iconName: 'TbTemperature',
-  },
-]
-
-const CAROUSEL = [
-  {
-    id: nanoid(),
+    title: 'labels.description.materials.title',
+    text: 'labels.description.materials.text',
     image: noImage,
   },
   {
     id: nanoid(),
+    title: 'labels.description.sizes.title',
+    text: 'labels.description.sizes.text',
     image: noImage,
   },
   {
     id: nanoid(),
+    title: 'labels.description.storage.title',
+    text: 'labels.description.storage.text',
     image: noImage,
   },
 ]
 
 const LABELS_DATA = {
-  CAROUSEL,
   DESCRIPTION,
   TEXTS,
 }

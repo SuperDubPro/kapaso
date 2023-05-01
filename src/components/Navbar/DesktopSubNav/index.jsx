@@ -4,24 +4,28 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useTranslation } from 'react-i18next'
+import { Link as RouterLink } from 'react-router-dom'
 
 export default function DesktopSubNav({ label, href, subLabel }) {
   const { t } = useTranslation()
+  const fontColor = useColorModeValue('kapaso.base', 'kapaso.lighter')
+  const hoverBgColor = useColorModeValue('kapasoAlpha.100', 'gray.900')
 
   return (
     <Link
-      href={href}
+      as={RouterLink}
+      to={href}
       role="group"
       display="block"
       p={2}
       rounded="md"
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      _hover={{ bg: hoverBgColor }}
     >
       <Stack direction="row" align="center">
         <Box>
           <Text
             transition="all .3s ease"
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: fontColor }}
             fontWeight={500}
           >
             {t(label)}
@@ -37,7 +41,7 @@ export default function DesktopSubNav({ label, href, subLabel }) {
           align="center"
           flex={1}
         >
-          <Icon color="pink.400" w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={fontColor} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>

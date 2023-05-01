@@ -3,7 +3,7 @@ import footer from './footer'
 import home from './pages/home'
 import labels from './pages/labels'
 import materials from './pages/materials'
-import packageLocale from './pages/package'
+import packets from './pages/packets'
 
 const enTranslations = {
   navbar,
@@ -11,7 +11,7 @@ const enTranslations = {
   home,
   labels,
   materials,
-  packageLocale,
+  packets,
 }
 
 export default enTranslations

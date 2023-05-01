@@ -14,8 +14,8 @@ const home = {
     },
   },
   productCards: {
-    package: {
-      header: 'Package',
+    packets: {
+      header: 'Packets',
       text: 'Please, someone, translate this',
     },
     materials: {

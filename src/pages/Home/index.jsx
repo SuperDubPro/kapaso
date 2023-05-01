@@ -1,5 +1,7 @@
 import React from 'react'
-import { Box, SimpleGrid, Container } from '@chakra-ui/react'
+import {
+  Box, Container, Wrap, WrapItem,
+} from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import { BsFillStickyFill, BsFillBagFill, BsFillLayersFill } from 'react-icons/bs'
 import { Carousel, PageBlock } from '../../components'
@@ -30,25 +32,27 @@ export default function Home() {
       </Box>
 
       <PageBlock isDark>
-        <SimpleGrid
-          columns={[1, 1, 2, 3]}
+        <Wrap
+          justify="center"
+          align="center"
           spacing={10}
           py={40}
-          px={[8, 12, 20]}
+          px={10}
         >
           {PRODUCT_CARDS.map(({
             icon, header, text, to, btnText, id,
           }) => (
-            <ProductCard
-              key={id}
-              icon={ICONS[icon]}
-              header={t(header)}
-              text={t(text)}
-              to={to}
-              btnText={t(btnText)}
-            />
+            <WrapItem key={id}>
+              <ProductCard
+                icon={ICONS[icon]}
+                header={t(header)}
+                text={t(text)}
+                to={to}
+                btnText={t(btnText)}
+              />
+            </WrapItem>
           ))}
-        </SimpleGrid>
+        </Wrap>
       </PageBlock>
 
       <PageBlock>

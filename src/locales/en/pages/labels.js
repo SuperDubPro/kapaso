@@ -1,10 +1,18 @@
 const labels = {
   title: 'Labels',
   description: {
-    size: 'sizes',
-    sun: 'about sun',
-    frost: 'about frost',
-    dry: 'about dry',
+    materials: {
+      title: 'Materials',
+      text: 'bla bla bla',
+    },
+    sizes: {
+      title: 'Size and shape',
+      text: 'bla bla bla',
+    },
+    storage: {
+      title: 'Storage',
+      text: 'bla bla bla',
+    },
   },
 }
 

@@ -1,9 +1,11 @@
 const navbar = {
   home: 'Home',
   about: 'About',
-  package: 'Package',
+  packaging: 'Packaging',
+  packets: 'Packets',
   materials: 'Materials',
   labels: 'Labels',
+  printing: 'Printing',
   equipment: 'Our equipment',
   contacts: 'Contacts',
 }

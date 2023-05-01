@@ -12,8 +12,8 @@ export default function Materials() {
   const { t } = useTranslation()
 
   return (
-    <VStack pt={8} spacing={0} width="100%">
-      <Heading pb={8}>
+    <VStack spacing={0} width="100%">
+      <Heading pt={8} pb={12}>
         {t(TEXTS.title)}
       </Heading>
 
@@ -32,7 +32,7 @@ export default function Materials() {
           minHeight="400px"
         />
         <Box display="flex" flexDir="column" alignItems="center" justifyContent="center" p={12}>
-          <Text fontSize="xl" fontWeight="bold">{t(MATERIALS.icover.title)}</Text>
+          <Heading size="md" pb={4}>{t(MATERIALS.icover.title)}</Heading>
           <Text>{t(MATERIALS.icover.description)}</Text>
         </Box>
       </PageBlock>
@@ -51,7 +51,7 @@ export default function Materials() {
           minHeight="400px"
         />
         <Box display="flex" flexDir="column" alignItems="center" justifyContent="center" p={12}>
-          <Text fontSize="xl" fontWeight="bold">{t(MATERIALS.ipack.title)}</Text>
+          <Heading size="md" pb={4}>{t(MATERIALS.ipack.title)}</Heading>
           <Text>{t(MATERIALS.ipack.description)}</Text>
         </Box>
       </PageBlock>

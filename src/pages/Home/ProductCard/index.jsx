@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Circle, Text, Heading, Button, VStack,
+  Circle, Text, Heading, Button, VStack, useColorModeValue,
 } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 import { Card } from '../../../components'
@@ -8,16 +8,20 @@ import { Card } from '../../../components'
 export default function ProductCard({
   icon, header, text, to, btnText,
 }) {
+  const circleBgColor = useColorModeValue('kapaso.lighter', 'kapaso.base')
+
   return (
     <Card
       display="flex"
       flexDir="column"
       justifyContent="space-between"
+      width="390px"
+      height="280px"
     >
       <VStack>
         <Circle
           size={12}
-          bgColor="teal.500"
+          bgColor={circleBgColor}
           color="white"
         >
           {icon}

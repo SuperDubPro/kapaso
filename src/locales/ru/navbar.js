@@ -1,9 +1,11 @@
 const navbar = {
   home: 'Главная',
   about: 'О нас',
-  package: 'Упаковка',
-  materials: 'Материалы',
+  packaging: 'Упаковка',
+  packets: 'Пакеты',
+  materials: 'Упаковочный материал',
   labels: 'Этикетки',
+  printing: 'Печать',
   equipment: 'Наше оборудование',
   contacts: 'Контакты',
 }

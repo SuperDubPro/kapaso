@@ -28,10 +28,10 @@ const PRODUCT_CARDS = [
   {
     id: nanoid(),
     icon: 'BsFillBagFill',
-    header: 'home.productCards.package.header',
-    text: 'home.productCards.package.text',
+    header: 'home.productCards.packets.header',
+    text: 'home.productCards.packets.text',
     btnText: 'home.moreBtn',
-    to: '/package',
+    to: '/packets',
   },
   {
     id: nanoid(),

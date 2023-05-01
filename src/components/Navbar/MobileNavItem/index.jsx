@@ -9,11 +9,19 @@ import { useTranslation } from 'react-i18next'
 export default function MobileNavItem({
   label, children, href, onBurgerClose,
 }) {
-  const { isOpen } = useDisclosure()
+  const { isOpen, onToggle } = useDisclosure()
   const { t } = useTranslation()
 
+  const handleItemClick = () => {
+    if (children) {
+      onToggle()
+      return
+    }
+    onBurgerClose()
+  }
+
   return (
-    <Stack spacing={4} onClick={onBurgerClose}>
+    <Stack spacing={4} onClick={handleItemClick}>
       <Link
         as={RouterLink}
         to={href ?? '#'}
@@ -59,7 +67,13 @@ export default function MobileNavItem({
         >
           {children
             && children.map((child) => (
-              <Link as={RouterLink} key={`MobileNavItem-child-${child.label}`} py={2} to={child.href}>
+              <Link
+                as={RouterLink}
+                key={`MobileNavItem-child-${child.label}`}
+                py={2}
+                to={child.href}
+                onClick={onBurgerClose}
+              >
                 {t(child.label)}
               </Link>
             ))}

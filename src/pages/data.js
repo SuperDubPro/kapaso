@@ -1,9 +1,10 @@
 const PAGES_NAMES = {
   home: 'home',
   about: 'about',
-  package: 'package',
+  packets: 'packets',
   materials: 'materials',
   labels: 'labels',
+  printing: 'printing',
   equipment: 'equipment',
   contacts: 'contacts',
 }
@@ -11,9 +12,10 @@ const PAGES_NAMES = {
 const PATHS = {
   [PAGES_NAMES.home]: '/',
   [PAGES_NAMES.about]: '/about',
-  [PAGES_NAMES.package]: '/package',
+  [PAGES_NAMES.packets]: '/packets',
   [PAGES_NAMES.materials]: '/materials',
   [PAGES_NAMES.labels]: '/labels',
+  [PAGES_NAMES.printing]: '/printing',
   [PAGES_NAMES.equipment]: '/equipment',
   [PAGES_NAMES.contacts]: '/contacts',
 }

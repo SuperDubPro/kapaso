@@ -1,61 +1,48 @@
 import React from 'react'
 import {
-  Box, Circle, Heading, SimpleGrid, Text, useColorModeValue, VStack,
+  Box, Heading, Text, VStack,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { TbResize, TbTemperature } from 'react-icons/tb'
-import { IoSunny, IoSnow } from 'react-icons/io5'
-import { Card, Carousel, PageBlock } from '../../components'
+import { PageBlock } from '../../components'
 import LABELS_DATA from './data'
 
-const { CAROUSEL, DESCRIPTION, TEXTS } = LABELS_DATA
-
-const ICONS = {
-  TbResize: <TbResize />,
-  IoSunny: <IoSunny />,
-  IoSnow: <IoSnow />,
-  TbTemperature: <TbTemperature />,
-}
+const { DESCRIPTION, TEXTS } = LABELS_DATA
 
 export default function Labels() {
   const { t } = useTranslation()
-  const cardColor = useColorModeValue('gray.50', 'gray.900')
 
   return (
-    <PageBlock display="flex" flexDir={['column', 'column', 'row']} pb={8}>
-      <VStack px={8} py={8} minWidth="50%">
-        <Heading pb={8}>
+    <VStack spacing={0} width="100%">
+      <PageBlock pt={8} pb={12} display="flex" justifyContent="center">
+        <Heading>
           {t(TEXTS.title)}
         </Heading>
+      </PageBlock>
 
-        <SimpleGrid columns={[1, 2]} spacing={8}>
-          {DESCRIPTION.map(({ id, iconName, text }) => (
-            <Card
-              key={id}
-              bgColor={cardColor}
-            >
-              <VStack>
-                <Circle
-                  size={8}
-                  bgColor="teal.500"
-                  color="white"
-                >
-                  {ICONS[iconName]}
-                </Circle>
-                <Text textAlign="center">
-                  {t(text)}
-                </Text>
-              </VStack>
-            </Card>
-          ))}
-        </SimpleGrid>
-      </VStack>
-
-      <Box overflow="hidden" borderRadius="12px" height="fit-content" minWidth="50%">
-        <Carousel
-          data={CAROUSEL}
-        />
-      </Box>
-    </PageBlock>
+      {DESCRIPTION.map(({
+        id, title, text, image,
+      }, i) => (
+        <PageBlock
+          key={id}
+          display="flex"
+          flexDir={['column', 'row']}
+          pb={24}
+          isDark={((i + 1) % 2) === 0}
+        >
+          <Box display="flex" flexDir="column" alignItems="center" justifyContent="center" p={12} width="100%">
+            <Heading size="md" pb={4}>{t(title)}</Heading>
+            <Text textAlign="center">{t(text)}</Text>
+          </Box>
+          <Box
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+            backgroundSize="cover"
+            backgroundImage={image}
+            minW="60%"
+            minHeight="400px"
+          />
+        </PageBlock>
+      ))}
+    </VStack>
   )
 }

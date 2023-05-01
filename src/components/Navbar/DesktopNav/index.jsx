@@ -28,7 +28,7 @@ export default function DesktopNav() {
               <Link
                 as={RouterLink}
                 p={2}
-                to={navItem.href ?? '/'}
+                to={navItem.href}
                 fontSize="sm"
                 fontWeight={500}
                 // color={linkColor}
