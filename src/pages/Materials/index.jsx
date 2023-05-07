@@ -13,14 +13,14 @@ export default function Materials() {
 
   return (
     <VStack spacing={0} width="100%">
-      <Heading pt={8} pb={12}>
+      <Heading py={10}>
         {t(TEXTS.title)}
       </Heading>
 
       <PageBlock
         display="flex"
-        flexDir={['column', 'row']}
-        pb={10}
+        flexDir={['column-reverse', 'row']}
+        pb={24}
         isDark
       >
         <Box
@@ -31,7 +31,7 @@ export default function Materials() {
           minW="50%"
           minHeight="400px"
         />
-        <Box display="flex" flexDir="column" alignItems="center" justifyContent="center" p={12}>
+        <Box display="flex" flexDir="column" alignItems="center" justifyContent="center" p={24}>
           <Heading size="md" pb={4}>{t(MATERIALS.icover.title)}</Heading>
           <Text>{t(MATERIALS.icover.description)}</Text>
         </Box>

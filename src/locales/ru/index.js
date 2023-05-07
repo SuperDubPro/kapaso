@@ -4,6 +4,7 @@ import home from './pages/home'
 import labels from './pages/labels'
 import materials from './pages/materials'
 import packets from './pages/packets'
+import printing from './pages/printing'
 
 const ruTranslations = {
   navbar,
@@ -12,6 +13,7 @@ const ruTranslations = {
   labels,
   materials,
   packets,
+  printing,
 }
 
 export default ruTranslations
