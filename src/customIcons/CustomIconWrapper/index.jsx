@@ -8,8 +8,8 @@ export function CustomIconWrapper({ children, size = 'm', ...props }) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width={`${SIZES[size] || SIZES.m}px`}
-      height={`${SIZES[size] || SIZES.m}px`}
+      width={`${SIZES[size] || size}px`}
+      height={`${SIZES[size] || size}px`}
     >
       {children}
     </svg>

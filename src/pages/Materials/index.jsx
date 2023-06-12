@@ -40,7 +40,7 @@ export default function Materials() {
       <PageBlock
         display="flex"
         flexDir={['column', 'row-reverse']}
-        pb={10}
+        pb={24}
       >
         <Box
           backgroundPosition="center"
