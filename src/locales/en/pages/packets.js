@@ -1,33 +1,33 @@
 const packets = {
-  title: 'Packets',
-  description: 'pockets description',
+  title: 'Packages',
+  description: 'The pouch material is manufactured on a laminator based on customer requirements and can be used both for storing loose products (powders) in dry conditions and for hard products (frozen fish) at sub-zero temperatures.',
   cards: {
     doypack: {
-      title: 'Doypack',
+      title: 'Doy-pack',
       text: '',
     },
     ziploc: {
-      title: 'Ziploc',
+      title: 'Zip-lock',
       text: '',
     },
     euroSlot: {
-      title: 'Euro slot',
+      title: 'Euroslot',
       text: '',
     },
     dieCutHandle: {
-      title: 'With die-cut handle',
+      title: 'Handle',
       text: '',
     },
     threeSeamVacuum: {
-      title: 'three seam vacuum bag',
+      title: 'Vacuum three-seam bags',
       text: '',
     },
     ziplocAndDoypack: {
-      title: 'Ziploc + Doypack',
+      title: 'Zip-lock + doy-pack',
       text: '',
     },
     ziplocAndDoypackAndHandle: {
-      title: 'Ziploc + Doypack + Euro slot / die-cut handle',
+      title: 'Zip-lock + doy-pack + euroslot / handle',
       text: '',
     },
   },

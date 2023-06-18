@@ -1,34 +1,34 @@
 const home = {
   carousel: {
     first: {
-      title: 'Design Projects 1',
-      text: 'The project board is an exclusive resource for contract work. It\'s perfect for freelancers, agencies, and moonlighters.',
+      title: 'High-class equipment',
+      text: 'High-performance and high-precision equipment from Europe and China.',
     },
     second: {
-      title: 'Design Projects 2',
-      text: 'The project board is an exclusive resource for contract work. It\'s perfect for freelancers, agencies, and moonlighters.',
+      title: 'In-house developments',
+      text: 'Development of own packaging solutions.',
     },
     third: {
-      title: 'Design Projects 3',
-      text: 'The project board is an exclusive resource for contract work. It\'s perfect for freelancers, agencies, and moonlighters.',
+      title: 'Production culture',
+      text: 'Quality control of products at each production stage.',
     },
   },
   productCards: {
     packets: {
-      header: 'Packets',
-      text: 'Please, someone, translate this',
+      header: 'Packages',
+      text: 'Vacuum, zip-lock, doy-pack, euro-slot, with handles, for pre-packaging.',
     },
     materials: {
-      header: 'Materials',
-      text: 'Icover, Ipack',
+      header: 'Packaging materials',
+      text: 'icover, ipack',
     },
     labels: {
       header: 'Labels',
-      text: 'And this',
+      text: 'Labels with your design in both small and large runs.',
     },
   },
-  partners: 'Our partners',
-  moreBtn: 'More',
+  partners: 'Our Partners',
+  moreBtn: 'Learn more',
 }
 
 export default home
