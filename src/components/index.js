@@ -1,7 +1,0 @@
-export { default as Navbar } from './Navbar'
-export { default as Footer } from './Footer'
-export { default as ColorModeSwitcher } from './ColorModeSwitcher'
-export { default as LanguageSwitcher } from './LanguageSwitcher'
-export { default as Carousel } from './Carousel'
-export { default as Card } from './Card'
-export { default as PageBlock } from './PageBlock'
