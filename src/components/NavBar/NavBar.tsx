@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   Box,
   Flex,
@@ -7,14 +7,14 @@ import {
   // useColorModeValue,
   // useDisclosure,
   Stack,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react"
 // import { Link as RouterLink } from 'react-router-dom'
 // import { MdClose, MdMenu } from "react-icons/md";
 
-import ColorModeSwitcher from '../ColorModeSwitcher'
-import LanguageSwitcher from '../LanguageSwitcher'
+// import ColorModeSwitcher from '../ColorModeSwitcher'
+// import LanguageSwitcher from '../LanguageSwitcher'
 // import MobileNav from './MobileNav'
-import DesktopNav from './DesktopNav'
+import { DesktopNav } from "./DesktopNav/DesktopNav"
 // import { KapasoLogo } from '../../customIcons'
 // import { PATHS, PAGES_NAMES } from './data'
 
@@ -45,11 +45,15 @@ export const Navbar = () => {
           </IconButton>
         </Flex> */}
 
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} alignItems="center">
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "start" }}
+          alignItems="center"
+        >
           {/* <RouterLink to={PATHS[PAGES_NAMES.home]}>
             <KapasoLogo size="xl" />
           </RouterLink> */}
-          <Flex display={{ base: 'none', md: 'flex' }} ml={8}>
+          <Flex display={{ base: "none", md: "flex" }} ml={8}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -60,8 +64,8 @@ export const Navbar = () => {
           direction="row"
           gap={1}
         >
-          <ColorModeSwitcher />
-          <LanguageSwitcher />
+          {/* <ColorModeSwitcher /> */}
+          {/* <LanguageSwitcher /> */}
         </Stack>
       </Flex>
 
