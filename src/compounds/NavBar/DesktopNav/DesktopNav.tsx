@@ -1,14 +1,15 @@
 import React from "react"
 import { HoverCard, IconButton, Stack } from "@chakra-ui/react"
+import { useTranslations } from "next-intl"
 // import { Link as RouterLink } from 'react-router-dom'
 // import { useRouter } from 'next/router'
 
 // import { useTranslation } from 'react-i18next'
-import { DesktopSubNav } from "../DesktopSubNav/DesktopSubNav"
+import { DesktopSubNav } from "../DesktopSubNav"
 import { NAV_ITEMS } from "../data"
 
 export const DesktopNav = () => {
-  //   const { t } = useTranslation()
+  const t = useTranslations("navbar")
   // const router = useRouter()
 
   // const popoverContentBgColor = useColorModeValue('white', 'gray.800')
@@ -39,7 +40,7 @@ export const DesktopNav = () => {
                   textDecoration: 'none',
                 }}
               > */}
-              <a>{navItem.title}</a>
+              <a>{t(navItem.title)}</a>
               {/* {t(navItem.title)} */}
               {/* {t(navItem.title)} */}
               {/* </Link> */}

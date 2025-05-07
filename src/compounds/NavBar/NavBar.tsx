@@ -8,18 +8,22 @@ import {
   // useDisclosure,
   Stack,
 } from "@chakra-ui/react"
+
 // import { Link as RouterLink } from 'react-router-dom'
 // import { MdClose, MdMenu } from "react-icons/md";
 
 // import ColorModeSwitcher from '../ColorModeSwitcher'
 // import LanguageSwitcher from '../LanguageSwitcher'
 // import MobileNav from './MobileNav'
-import { DesktopNav } from "./DesktopNav/DesktopNav"
+
+import { DesktopNav } from "./DesktopNav"
+import { ToggleBlock } from "./ToggleBlock"
 // import { KapasoLogo } from '../../customIcons'
 // import { PATHS, PAGES_NAMES } from './data'
 
 export const Navbar = () => {
   // const { isOpen, onToggle, onClose } = useDisclosure()
+  // const router = useRouter()
 
   return (
     <Box position="sticky" top="0" zIndex="sticky">
@@ -66,6 +70,7 @@ export const Navbar = () => {
         >
           {/* <ColorModeSwitcher /> */}
           {/* <LanguageSwitcher /> */}
+          <ToggleBlock />
         </Stack>
       </Flex>
 

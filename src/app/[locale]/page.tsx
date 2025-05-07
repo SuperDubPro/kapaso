@@ -1,3 +1,4 @@
+import { use } from "react"
 import {
   Box,
   Button,
@@ -11,10 +12,32 @@ import {
   VStack,
 } from "@chakra-ui/react"
 import Image from "next/image"
+import { setRequestLocale } from "next-intl/server"
 
+import { type Locale, routing } from "@/i18n"
 import { ColorModeToggle } from "@/components/color-mode-toggle"
 
-export default async function Page() {
+interface PageProps {
+  params: Promise<{ locale: Locale }>
+}
+
+// export async function generateMetadata({ params }) {
+//   const { locale } = await params
+//   const t = await getTranslations({ locale, namespace: "Metadata" })
+
+//   return {
+//     title: t("title"),
+//   }
+// }
+
+export const generateStaticParams = () => {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
+export default function Page({ params }: PageProps) {
+  const { locale } = use(params)
+  setRequestLocale(locale)
+
   return (
     <Box textAlign="center" fontSize="xl" pt="30vh">
       <VStack gap="8">
@@ -70,7 +93,7 @@ export default async function Page() {
 
       <Box pos="absolute" top="4" right="4">
         <ClientOnly fallback={<Skeleton w="10" h="10" rounded="md" />}>
-          <ColorModeToggle />
+          
         </ClientOnly>
       </Box>
     </Box>

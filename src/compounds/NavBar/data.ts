@@ -22,42 +22,42 @@ export const PATHS = {
 
 export const NAV_ITEMS = [
   {
-    title: "navbar.home",
+    title: "home",
     href: PATHS[PAGES_NAMES.home],
   },
   {
-    title: "navbar.packaging",
+    title: "packaging",
     children: [
       {
-        title: "navbar.packets",
-        // subLabel: 'navbar.package',
+        title: "packets",
+        // subLabel: 'package',
         href: PATHS[PAGES_NAMES.packets],
       },
       {
-        title: "navbar.materials",
-        // subLabel: 'navbar.materials',
+        title: "materials",
+        // subLabel: 'materials',
         href: PATHS[PAGES_NAMES.materials],
       },
     ],
   },
   {
-    title: "navbar.labels",
+    title: "labels",
     href: PATHS[PAGES_NAMES.labels],
   },
   {
-    title: "navbar.printing",
+    title: "printing",
     href: PATHS[PAGES_NAMES.printing],
   },
   {
-    title: "navbar.equipment",
+    title: "equipment",
     href: PATHS[PAGES_NAMES.equipment],
   },
   {
-    title: "navbar.about",
+    title: "about",
     href: PATHS[PAGES_NAMES.about],
   },
   {
-    title: "navbar.contacts",
+    title: "contacts",
     href: PATHS[PAGES_NAMES.contacts],
   },
 ]
