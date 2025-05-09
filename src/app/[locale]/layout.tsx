@@ -11,7 +11,7 @@ import { Navbar } from "@/compounds/NavBar/NavBar"
 import Provider from "./provider"
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["cyrillic", "latin"],
   display: "swap",
 })
 

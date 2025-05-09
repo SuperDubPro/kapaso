@@ -1,22 +1,22 @@
 export const PAGES_NAMES = {
   home: "home",
-  about: "about",
   packets: "packets",
   materials: "materials",
   labels: "labels",
   printing: "printing",
-  equipment: "equipment",
+  film: "film",
+  mission: "mission",
   contacts: "contacts",
 }
 
 export const PATHS = {
   [PAGES_NAMES.home]: "/",
-  [PAGES_NAMES.about]: "/about",
   [PAGES_NAMES.packets]: "/packets",
   [PAGES_NAMES.materials]: "/materials",
   [PAGES_NAMES.labels]: "/labels",
   [PAGES_NAMES.printing]: "/printing",
-  [PAGES_NAMES.equipment]: "/equipment",
+  [PAGES_NAMES.film]: "/film",
+  [PAGES_NAMES.mission]: "/mission",
   [PAGES_NAMES.contacts]: "/contacts",
 }
 
@@ -49,12 +49,12 @@ export const NAV_ITEMS = [
     href: PATHS[PAGES_NAMES.printing],
   },
   {
-    title: "equipment",
-    href: PATHS[PAGES_NAMES.equipment],
+    title: "film",
+    href: PATHS[PAGES_NAMES.film],
   },
   {
-    title: "about",
-    href: PATHS[PAGES_NAMES.about],
+    title: "mission",
+    href: PATHS[PAGES_NAMES.mission],
   },
   {
     title: "contacts",

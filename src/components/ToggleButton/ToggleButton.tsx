@@ -12,7 +12,7 @@ interface ToggleState<T = string> {
 
 interface ToggleProps<T = string> extends IconButtonProps {
   states: ToggleState<T>[]
-  defaultStateValue: T
+  defaultStateValue?: T
   onCustomToggle: (value: T) => void
 }
 

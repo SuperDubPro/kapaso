@@ -1,10 +1,10 @@
 import React from "react"
-import { HoverCard, IconButton, Stack } from "@chakra-ui/react"
+import { HoverCard, Stack, Icon, Link as ChakraLink  } from "@chakra-ui/react"
 import { useTranslations } from "next-intl"
-// import { Link as RouterLink } from 'react-router-dom'
-// import { useRouter } from 'next/router'
+import { IoChevronDown } from "react-icons/io5"
 
-// import { useTranslation } from 'react-i18next'
+import { Link } from "@/i18n"
+
 import { DesktopSubNav } from "../DesktopSubNav"
 import { NAV_ITEMS } from "../data"
 
@@ -18,55 +18,48 @@ export const DesktopNav = () => {
   return (
     <Stack direction="row" gap={4}>
       {NAV_ITEMS.map((navItem) => (
-        <IconButton
+        <HoverCard.Root
           key={`navbar-item-${navItem.title}`}
-          _hover={{
-            // backgroundColor: linkHoverBg,
-            backgroundColor: "gray.50",
-          }}
-          variant="ghost"
-          aria-label=""
+          positioning={{ placement: "bottom-start" }}
         >
-          <HoverCard.Root positioning={{ placement: "bottom-start" }}>
-            <HoverCard.Trigger asChild>
-              {/* <Link
-                as={RouterLink}
-                p={2}
-                to={navItem.href}
-                fontSize="sm"
-                fontWeight={500}
-                // color={linkColor}
-                _hover={{
-                  textDecoration: 'none',
-                }}
-              > */}
-              <a>{t(navItem.title)}</a>
-              {/* {t(navItem.title)} */}
-              {/* {t(navItem.title)} */}
-              {/* </Link> */}
-            </HoverCard.Trigger>
+          <HoverCard.Trigger asChild>
+            <ChakraLink>
+              {navItem.href && (
+                <Link key={navItem.title} href={navItem.href}>
+                  {t(navItem.title)}
+                </Link>
+              )}
 
-            {navItem.children && (
-              <HoverCard.Content
-                border={0}
-                boxShadow="xl"
-                // bg={popoverContentBgColor}
-                p={4}
-                rounded="xl"
-                minW="sm"
-              >
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav
-                      key={`DesktopSubNav-${child.title}`}
-                      {...child}
-                    />
-                  ))}
-                </Stack>
-              </HoverCard.Content>
-            )}
-          </HoverCard.Root>
-        </IconButton>
+              {!navItem.href && t(navItem.title)}
+
+              {navItem.children && (
+                <Icon size="sm">
+                  <IoChevronDown />
+                </Icon>
+              )}
+            </ChakraLink>
+          </HoverCard.Trigger>
+
+          {navItem.children && (
+            <HoverCard.Content
+              border={0}
+              boxShadow="xl"
+              // bg={popoverContentBgColor}
+              p={4}
+              rounded="xl"
+              minW="sm"
+            >
+              <Stack>
+                {navItem.children.map((child) => (
+                  <DesktopSubNav
+                    key={`DesktopSubNav-${child.title}`}
+                    {...child}
+                  />
+                ))}
+              </Stack>
+            </HoverCard.Content>
+          )}
+        </HoverCard.Root>
       ))}
     </Stack>
   )
