@@ -1,4 +1,4 @@
-import { Grid, GridItem, VStack } from "@chakra-ui/react"
+import { Container, Grid, GridItem, VStack } from "@chakra-ui/react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
@@ -41,30 +41,39 @@ export default async function RootLayout({
 
   return (
     <html className={inter.className} suppressHydrationWarning lang={locale}>
-      <head />
+      <head>
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
+
       <body>
         <NextIntlClientProvider>
           <Provider>
-            <Grid
-              gridTemplateColumns="100%"
-              gridTemplateRows="1fr auto"
-              position="absolute"
-              left="0"
-              right="0"
-              top="0"
-              bottom="0"
-              pb={0}
-            >
-              <GridItem>
-                <Navbar />
+            <Container>
+              <Grid
+                gridTemplateColumns="100%"
+                gridTemplateRows="1fr auto"
+                position="absolute"
+                left="0"
+                right="0"
+                top="0"
+                bottom="0"
+                pb={0}
+              >
+                <GridItem>
+                  <Navbar />
 
-                <VStack width="100%" gap={0}>
-                  {children}
-                </VStack>
-              </GridItem>
+                  <VStack width="100%" gap={0}>
+                    {children}
+                  </VStack>
+                </GridItem>
 
-              <GridItem>Footer</GridItem>
-            </Grid>
+                <GridItem>Footer</GridItem>
+              </Grid>
+            </Container>
           </Provider>
         </NextIntlClientProvider>
       </body>

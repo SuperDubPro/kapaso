@@ -8,4 +8,5 @@ export interface I18nNavbar {
   film: string,
   mission: string
   contacts: string,
+  makeCalculation: string,
 }

@@ -10,4 +10,5 @@ export const navbar: I18nNavbar = {
   film: "Film",
   mission: "Mission",
   contacts: "Contacts",
+  makeCalculation: "Make a calculation",
 }

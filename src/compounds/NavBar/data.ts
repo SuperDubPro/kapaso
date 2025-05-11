@@ -1,63 +1,43 @@
-export const PAGES_NAMES = {
-  home: "home",
-  packets: "packets",
-  materials: "materials",
-  labels: "labels",
-  printing: "printing",
-  film: "film",
-  mission: "mission",
-  contacts: "contacts",
-}
+import { Page, PATH } from "@/constants"
 
-export const PATHS = {
-  [PAGES_NAMES.home]: "/",
-  [PAGES_NAMES.packets]: "/packets",
-  [PAGES_NAMES.materials]: "/materials",
-  [PAGES_NAMES.labels]: "/labels",
-  [PAGES_NAMES.printing]: "/printing",
-  [PAGES_NAMES.film]: "/film",
-  [PAGES_NAMES.mission]: "/mission",
-  [PAGES_NAMES.contacts]: "/contacts",
-}
+import { type NavItem } from "./types"
 
-export const NAV_ITEMS = [
+export const NAV_ITEMS: NavItem[] = [
   {
     title: "home",
-    href: PATHS[PAGES_NAMES.home],
+    href: PATH[Page.Home],
   },
   {
     title: "packaging",
-    children: [
+    subItems: [
       {
         title: "packets",
-        // subLabel: 'package',
-        href: PATHS[PAGES_NAMES.packets],
+        href: PATH[Page.Packets],
       },
       {
         title: "materials",
-        // subLabel: 'materials',
-        href: PATHS[PAGES_NAMES.materials],
+        href: PATH[Page.Materials],
       },
     ],
   },
   {
     title: "labels",
-    href: PATHS[PAGES_NAMES.labels],
+    href: PATH[Page.Labels],
   },
   {
     title: "printing",
-    href: PATHS[PAGES_NAMES.printing],
+    href: PATH[Page.Printing],
   },
   {
     title: "film",
-    href: PATHS[PAGES_NAMES.film],
+    href: PATH[Page.Film],
   },
   {
     title: "mission",
-    href: PATHS[PAGES_NAMES.mission],
+    href: PATH[Page.Mission],
   },
   {
     title: "contacts",
-    href: PATHS[PAGES_NAMES.contacts],
+    href: PATH[Page.Contacts],
   },
 ]
