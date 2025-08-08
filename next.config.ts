@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["@chakra-ui/react"],
   },
+  images: {
+    formats: ["image/webp"],
+  },
 }
 
 const withNextIntl = createNextIntlPlugin()

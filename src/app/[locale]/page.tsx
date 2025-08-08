@@ -13,6 +13,11 @@ import Image from "next/image"
 import { setRequestLocale } from "next-intl/server"
 
 import { type Locale, routing } from "@/i18n"
+import { Carousel } from "@/components/Carousel"
+import FilmImage from "@/assets/P8037954.jpg"
+import LaminationImage from "@/assets/P8037910_1.jpg"
+
+import "@/styles/global.css"
 
 interface PageProps {
   params: Promise<{ locale: Locale }>
@@ -36,13 +41,27 @@ export default function Page({ params }: PageProps) {
   setRequestLocale(locale)
 
   return (
-    <Box textAlign="center" fontSize="xl" pt="30vh">
+    <Box textAlign="center" fontSize="xl">
       <VStack gap="8">
+        <Box maxW="100vw">
+          <Carousel>
+            <Image
+              alt="Плёнка"
+              src={FilmImage}
+            />
+            <Image
+              alt="Ламинирование"
+              src={LaminationImage}
+            />
+          </Carousel>
+        </Box>
+
         <Image
           alt="chakra logo"
-          src="/static/logo.svg"
+          src="/web-app-manifest-512x512.png"
           width="80"
           height="80"
+          sizes='100vw'
         />
         <Heading size="2xl" letterSpacing="tight">
           Welcome to Chakra UI v3 + Next.js (App)
