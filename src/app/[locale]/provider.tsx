@@ -8,9 +8,9 @@ import { system } from "./theme"
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <ChakraProvider value={system}>
-      <ThemeProvider attribute="class">
-        {props.children}
-      </ThemeProvider>
+      {/* <ThemeProvider attribute="class"> */}
+      {props.children}
+      {/* </ThemeProvider> */}
     </ChakraProvider>
   )
 }

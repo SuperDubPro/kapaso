@@ -10,6 +10,12 @@ import { Navbar } from "@/compounds/NavBar/NavBar"
 
 import Provider from "./provider"
 
+import "@/styles/global.css"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/autoplay"
+
 const inter = Inter({
   subsets: ["cyrillic", "latin"],
   display: "swap",
@@ -55,18 +61,30 @@ export default async function RootLayout({
             <Container>
               <Grid
                 gridTemplateColumns="100%"
-                gridTemplateRows="1fr auto"
-                position="absolute"
-                left="0"
-                right="0"
-                top="0"
-                bottom="0"
-                pb={0}
+                gridTemplateRows="60px 1fr auto"
+                width="full"
+                height="full"
               >
-                <GridItem>
-                  <Navbar />
+                <GridItem position="sticky" top="0" zIndex="sticky">
+                  <VStack
+                    minW="335px"
+                    maxW="1200px"
+                    height="100%"
+                    margin="auto"
+                    gap={0}
+                  >
+                    <Navbar />
+                  </VStack>
+                </GridItem>
 
-                  <VStack width="100%" gap={0}>
+                <GridItem>
+                  <VStack
+                    minW="335px"
+                    maxW="1200px"
+                    // width={{ base: "335px", xl: "1200px" }}
+                    margin="auto"
+                    gap={0}
+                  >
                     {children}
                   </VStack>
                 </GridItem>

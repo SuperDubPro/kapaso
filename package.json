@@ -7,7 +7,7 @@
     "turbo-dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint -c ./eslint.config.mjs",
     "lint-fix": "npx eslint --fix ./",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,html}'"
   },
@@ -20,22 +20,20 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-icons": "5.5.0",
-    "react-slick": "0.31.0",
-    "slick-carousel": "1.8.1"
+    "swiper": "^12.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/react-slick": "0.23.13",
     "@typescript-eslint/eslint-plugin": "8.47.0",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.0.3",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-prettier": "5.5.4",
     "prettier": "3.6.2",
-    "eslint": "9.39.1",
-    "eslint-config-next": "16.0.3",
     "typescript": "^5"
   }
 }

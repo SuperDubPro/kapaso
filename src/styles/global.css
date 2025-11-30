@@ -1,4 +1,7 @@
-.slick-next {
-  height: none !important;
-  width: none !important;
+:root {
+  --swiper-navigation-sides-offset: 20px
+}
+
+.max-w-full {
+  max-width: 100%;
 }

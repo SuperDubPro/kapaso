@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   experimental: {
     optimizePackageImports: ["@chakra-ui/react"],
+    esmExternals: true,
   },
   images: {
     formats: ["image/webp"],

@@ -1,5 +1,5 @@
 export const home = {
-  carousel: {
+  slider: {
     first: {
       title: "High-class equipment",
       text: "High-performance and high-precision equipment from Europe and China.",

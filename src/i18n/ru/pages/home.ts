@@ -1,5 +1,5 @@
 export const home = {
-  carousel: {
+  slider: {
     first: {
       title: "Высококлассное оборудование",
       text: "Самое самое",

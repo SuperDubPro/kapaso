@@ -1,30 +1,19 @@
-import { dirname } from "path"
-import { fileURLToPath } from "url"
-
-import { FlatCompat } from "@eslint/eslintrc"
 import { defineConfig, globalIgnores } from "eslint/config"
 import nextVitals from "eslint-config-next/core-web-vitals"
 import nextTs from "eslint-config-next/typescript"
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
+import prettier from "eslint-config-prettier/flat"
+import prettierPlugin from "eslint-plugin-prettier"
+import importPlugin from "eslint-plugin-import"
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  ...compat.config({
-    extends: [
-      "next/core-web-vitals",
-      "next/typescript",
-      "prettier",
-      "plugin:import/recommended",
-    ],
-
-    plugins: ["prettier", "import"],
+  prettier,
+  {
+    plugins: {
+      prettier: prettierPlugin,
+      import: importPlugin,
+    },
 
     rules: {
       "semi": ["error", "never"],
@@ -67,7 +56,7 @@ const eslintConfig = defineConfig([
         "fixStyle": "inline-type-imports",
       }],
     },
-  }),
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
@@ -76,6 +65,6 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
-]);
+])
 
-export default eslintConfig;
+export default eslintConfig

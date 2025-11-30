@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Box,
   Flex,
@@ -20,8 +19,8 @@ import Image from "next/image"
 import { Link } from "@/i18n"
 import { PATH } from "@/constants"
 
-import { DesktopNavItem } from "./DesktopNavItem"
-import { ButtonBlock } from "./ButtonBlock"
+import { DesktopNavItem } from "./components/DesktopNavItem"
+import { ButtonBlock } from "./components/ButtonBlock"
 import { NAV_ITEMS } from "./data"
 import logo from "./logo.svg"
 // import { KapasoLogo } from '../../customIcons'
@@ -32,16 +31,16 @@ export const Navbar = () => {
   // const router = useRouter()
 
   return (
-    <Box position="sticky" top="0" zIndex="sticky">
-      <Flex
-        // bg={useColorModeValue('white', 'gray.800')}
-        minH="60px"
-        py={{ base: 2 }}
-        px={{ base: 8 }}
-        align="center"
-      >
-        {/** mobile hamburger toggle */}
-        {/* <Flex
+    <Flex
+      minW="100%"
+      height="100%"
+      align="center"
+      py={{ base: 2 }}
+      bg={{ base: "white", _dark: "black" }}
+    >
+      {/* <NavContainer> */}
+      {/** mobile hamburger toggle */}
+      {/* <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
           display={{ base: 'flex', md: 'none' }}
@@ -55,44 +54,44 @@ export const Navbar = () => {
           </IconButton>
         </Flex> */}
 
-        <Flex
-          flex={{ base: 1 }}
-          justify="start"
-          alignItems="center"
-        >
-          <Link href={PATH.home}>
-            <Image src={logo} alt="logo" width={109} height={28} unoptimized />
-          </Link>
+      <Flex
+        flex={{ base: 1 }}
+        justify="start"
+        alignItems="center"
+      >
+        <Link href={PATH.home}>
+          <Image src={logo} alt="logo" width={109} height={28} unoptimized />
+        </Link>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={8}>
-            <Stack direction="row" gap={4}>
-              {NAV_ITEMS.map(({ title, href, subItems }) => (
-                <DesktopNavItem
-                  key={`navbar-desktop-item-${title}`}
-                  title={title}
-                  href={href}
-                  subItems={subItems}
-                />
-              ))}
-            </Stack>
-          </Flex>
+        <Flex display={{ base: "none", md: "flex" }} ml={8}>
+          <Stack direction="row" gap={4}>
+            {NAV_ITEMS.map(({ title, href, subItems }) => (
+              <DesktopNavItem
+                key={`navbar-desktop-item-${title}`}
+                title={title}
+                href={href}
+                subItems={subItems}
+              />
+            ))}
+          </Stack>
         </Flex>
-
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify="flex-end"
-          direction="row"
-          gap={1}
-        >
-          {/* <ColorModeSwitcher /> */}
-          {/* <LanguageSwitcher /> */}
-          <ButtonBlock />
-        </Stack>
       </Flex>
+
+      <Stack
+        flex={{ base: 1, md: 0 }}
+        justify="flex-end"
+        direction="row"
+        gap={1}
+      >
+        {/* <ColorModeSwitcher /> */}
+        {/* <LanguageSwitcher /> */}
+        <ButtonBlock />
+      </Stack>
+      {/* </NavContainer> */}
 
       {/* <Collapse in={isOpen} animateOpacity>
         <MobileNav onClose={onClose} />
       </Collapse> */}
-    </Box>
+    </Flex>
   )
 }
