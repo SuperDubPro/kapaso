@@ -1,7 +1,7 @@
 "use client"
 
 import { type ReactNode, type FC } from "react"
-import { Box } from "@chakra-ui/react"
+import { Box, Stack } from "@chakra-ui/react"
 import { Swiper, SwiperSlide, type SwiperProps } from "swiper/react"
 import { Autoplay, Pagination } from "swiper/modules"
 import { IoChevronForwardSharp, IoChevronBackSharp  } from "react-icons/io5"
@@ -19,56 +19,52 @@ interface Props extends SwiperProps {
 
 export const Slider: FC<Props> = ({ items, ...other }) => {
   return (
-    <Box
-      position="relative"
-      overflow="hidden"
-      textAlign="center"
-      mb="10"
-      borderRadius="2xl"
-      maxW="100%"
-    >
-      <Swiper
-        className="max-w-full"
-        navigation
-        pagination={{ clickable: true, type: "bullets" }}
-        loop
-        modules={[Pagination]}
-        autoplay={{
-          delay: 7777,
-        }}
-        {...other}
+    <Stack mb="10">
+      <Box
+        overflow="hidden"
+        textAlign="center"
+        borderRadius="2xl"
+        maxW="100%"
       >
-        {items.map(({ key, image }) => (
-          <SwiperSlide className="max-w-full" key={key}>
-            {image}
-          </SwiperSlide>
-        ))}
-
-        <SlideNavButton
-          className="swiper-button-next"
-          onNavClick={(swiper) => {
-            swiper?.slideNext()
+        <Swiper
+          className="max-w-full"
+          autoplay={{ delay: 7777 }}
+          navigation
+          pagination={{
+            el: ".custom-slider-pagination",
+            clickable: true,
+            type: "bullets",
           }}
-          // position="absolute"
-          // zIndex=""
-          // top="50%"
-          // bottom="50%"
-          // marginRight="8"
+          loop
+          modules={[Autoplay, Pagination]}
+          {...other}
         >
-          <IoChevronForwardSharp />
-        </SlideNavButton>
+          {items.map(({ key, image }) => (
+            <SwiperSlide className="max-w-full" key={key}>
+              {image}
+            </SwiperSlide>
+          ))}
 
-        <SlideNavButton
-          className="swiper-button-prev"
-          onNavClick={(swiper) => swiper?.slidePrev()}
-          // position="absolute"
-          // top="50%"
-          // bottom="50%"
-          // marginLeft="8"
-        >
-          <IoChevronBackSharp />
-        </SlideNavButton>
-      </Swiper>
-    </Box>
+          <SlideNavButton
+            className="swiper-button-next"
+            onNavClick={(swiper) => {
+              swiper?.slideNext()
+            }}
+          >
+            <IoChevronForwardSharp />
+          </SlideNavButton>
+
+          <SlideNavButton
+            className="swiper-button-prev"
+            onNavClick={(swiper) => swiper?.slidePrev()}
+          >
+            <IoChevronBackSharp />
+          </SlideNavButton>
+
+        </Swiper>
+      </Box>
+      <Box className="custom-slider-pagination" />
+    </Stack>
+
   )
 }
