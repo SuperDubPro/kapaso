@@ -21,7 +21,7 @@ interface Props extends SwiperProps {
 
 export const Slider: FC<Props> = ({ items, ...other }) => {
   return (
-    <Stack mb="10" gap="6">
+    <Stack gap="6">
       <Box
         overflow="hidden"
         textAlign="center"

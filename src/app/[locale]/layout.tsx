@@ -61,7 +61,7 @@ export default async function RootLayout({
             <Container>
               <Grid
                 gridTemplateColumns="100%"
-                gridTemplateRows="60px 1fr auto"
+                gridTemplateRows="93px 1fr 200px"
                 width="full"
                 height="full"
               >
@@ -89,7 +89,16 @@ export default async function RootLayout({
                   </VStack>
                 </GridItem>
 
-                <GridItem>Footer</GridItem>
+                <GridItem>
+                  <VStack
+                    minW="335px"
+                    maxW="1200px"
+                    margin="auto"
+                    gap={0}
+                  >
+                    Footer
+                  </VStack>
+                </GridItem>
               </Grid>
             </Container>
           </Provider>

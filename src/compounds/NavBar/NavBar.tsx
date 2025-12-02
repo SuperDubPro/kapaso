@@ -64,7 +64,7 @@ export const Navbar = () => {
         </Link>
 
         <Flex display={{ base: "none", md: "flex" }} ml={8}>
-          <Stack direction="row" gap={4}>
+          <Stack direction="row" gap={8}>
             {NAV_ITEMS.map(({ title, href, subItems }) => (
               <DesktopNavItem
                 key={`navbar-desktop-item-${title}`}
