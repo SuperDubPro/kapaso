@@ -1,6 +1,7 @@
 :root {
   --swiper-navigation-sides-offset: 20px;
   --swiper-pagination-bullet-horizontal-gap: 0px;
+  --swiper-pagination-color: var(--chakra-colors-iloks-600);
 }
 
 .max-w-full {
