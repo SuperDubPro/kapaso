@@ -49,6 +49,8 @@ export default function Page({ params }: PageProps) {
                 alt="Плёнка"
                 src={FilmImage}
               />,
+              title:"Межслойная печать",
+              description:"Ширина макета до 1 180 мм и до 8 цветов",
             },
             {
               key: "laminationImage",
@@ -56,6 +58,8 @@ export default function Page({ params }: PageProps) {
                 alt="Ламинирование"
                 src={LaminationImage}
               />,
+              title:"Межслойная печать",
+              description:"Ширина макета до 1 180 мм и до 8 цветов",
             },
           ]}
         />

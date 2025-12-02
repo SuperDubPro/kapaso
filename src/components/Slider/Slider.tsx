@@ -1,7 +1,7 @@
 "use client"
 
 import { type ReactNode, type FC } from "react"
-import { Box, Stack } from "@chakra-ui/react"
+import { Box, Heading, HStack, Text, Stack } from "@chakra-ui/react"
 import { Swiper, SwiperSlide, type SwiperProps } from "swiper/react"
 import { Autoplay, Pagination } from "swiper/modules"
 import { IoChevronForwardSharp, IoChevronBackSharp  } from "react-icons/io5"
@@ -11,6 +11,8 @@ import { SlideNavButton } from "./SlideNavButton"
 interface SlideItem {
   key: string
   image: ReactNode
+  title?: string
+  description?: string
 }
 
 interface Props extends SwiperProps {
@@ -19,7 +21,7 @@ interface Props extends SwiperProps {
 
 export const Slider: FC<Props> = ({ items, ...other }) => {
   return (
-    <Stack mb="10">
+    <Stack mb="10" gap="6">
       <Box
         overflow="hidden"
         textAlign="center"
@@ -39,10 +41,23 @@ export const Slider: FC<Props> = ({ items, ...other }) => {
           modules={[Autoplay, Pagination]}
           {...other}
         >
-          {items.map(({ key, image }) => (
-            <SwiperSlide className="max-w-full" key={key}>
-              {image}
-            </SwiperSlide>
+          {items.map(({ key, image, title, description }) => (
+            <>
+              <SwiperSlide className="max-w-full" key={key}>
+                {image}
+                <Stack
+                  position="absolute"
+                  left="10"
+                  bottom="10"
+                  color="white"
+                  textAlign="left"
+                  gap="1"
+                >
+                  <Heading size="4xl" fontWeight="bolder">{title}</Heading>
+                  <Text fontSize="lg">{description}</Text>
+                </Stack>
+              </SwiperSlide>
+            </>
           ))}
 
           <SlideNavButton
@@ -50,6 +65,7 @@ export const Slider: FC<Props> = ({ items, ...other }) => {
             onNavClick={(swiper) => {
               swiper?.slideNext()
             }}
+            size="xs"
           >
             <IoChevronForwardSharp />
           </SlideNavButton>
@@ -57,13 +73,20 @@ export const Slider: FC<Props> = ({ items, ...other }) => {
           <SlideNavButton
             className="swiper-button-prev"
             onNavClick={(swiper) => swiper?.slidePrev()}
+            size="xs"
           >
             <IoChevronBackSharp />
           </SlideNavButton>
 
         </Swiper>
       </Box>
-      <Box className="custom-slider-pagination" />
+      <HStack
+        className="custom-slider-pagination"
+        justify="center"
+        align="center"
+        width="100%"
+        gap="2"
+      />
     </Stack>
 
   )
