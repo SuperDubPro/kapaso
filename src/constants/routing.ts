@@ -1,4 +1,4 @@
-export enum Page {
+export enum PageName {
   Home = "home",
   Packets = "packets",
   Materials = "materials",
@@ -9,13 +9,13 @@ export enum Page {
   Contacts = "contacts",
 }
 
-export const PATH: Record<Page, string> = {
-  [Page.Home]: "/",
-  [Page.Packets]: "/packets",
-  [Page.Materials]: "/materials",
-  [Page.Labels]: "/labels",
-  [Page.Printing]: "/printing",
-  [Page.Film]: "/film",
-  [Page.Mission]: "/mission",
-  [Page.Contacts]: "/contacts",
+export const PATH: Record<PageName, string> = {
+  [PageName.Home]: "/",
+  [PageName.Packets]: "/packets",
+  [PageName.Materials]: "/materials",
+  [PageName.Labels]: "/labels",
+  [PageName.Printing]: "/printing",
+  [PageName.Film]: "/film",
+  [PageName.Mission]: "/mission",
+  [PageName.Contacts]: "/contacts",
 }

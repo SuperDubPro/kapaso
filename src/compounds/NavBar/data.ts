@@ -1,43 +1,43 @@
-import { Page, PATH } from "@/constants"
+import { PageName, PATH } from "@/constants"
 
 import { type NavItem } from "./types"
 
 export const NAV_ITEMS: NavItem[] = [
   {
     title: "home",
-    href: PATH[Page.Home],
+    href: PATH[PageName.Home],
   },
   {
     title: "packaging",
     subItems: [
       {
         title: "packets",
-        href: PATH[Page.Packets],
+        href: PATH[PageName.Packets],
       },
       {
         title: "materials",
-        href: PATH[Page.Materials],
+        href: PATH[PageName.Materials],
       },
     ],
   },
   {
     title: "labels",
-    href: PATH[Page.Labels],
+    href: PATH[PageName.Labels],
   },
   {
     title: "printing",
-    href: PATH[Page.Printing],
+    href: PATH[PageName.Printing],
   },
   {
     title: "film",
-    href: PATH[Page.Film],
+    href: PATH[PageName.Film],
   },
   {
     title: "mission",
-    href: PATH[Page.Mission],
+    href: PATH[PageName.Mission],
   },
   {
     title: "contacts",
-    href: PATH[Page.Contacts],
+    href: PATH[PageName.Contacts],
   },
 ]

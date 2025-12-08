@@ -7,10 +7,12 @@ import {
 import Image from "next/image"
 import { setRequestLocale } from "next-intl/server"
 
-import { CardsGrid, Slider } from "@/components"
+import { Card, CardsGrid, Slider } from "@/components"
 import { type Locale, routing } from "@/i18n"
 import FilmImage from "@/assets/P8037954.jpg"
 import LaminationImage from "@/assets/P8037910_1.jpg"
+import Packet from "@/assets/packets/zip-lock_doy-pack_euroslot.png"
+import { CardType, PATH, PageName } from "@/constants"
 
 interface PageProps {
   params: Promise<{ locale: Locale }>
@@ -63,6 +65,19 @@ export default function Page({ params }: PageProps) {
       <Heading size="4xl" fontWeight="bolder" alignSelf="start">
         Продукция<sup>5</sup>
       </Heading>
+
+      <Card
+        type={CardType.WithLink}
+        title="Пакеты"
+        description="Вакуумные, зип-лок, дой-пак, еврослот, c ручками, для фасовки"
+        link={PATH[PageName.Packets]}
+        image={
+          <Image
+            alt="packets"
+            src={Packet}
+          />
+        }
+      />
 
       <CardsGrid />
     </VStack>
